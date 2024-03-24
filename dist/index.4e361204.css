@@ -1,0 +1,85 @@
+.app-header {
+  background-color: var(--background);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+}
+
+.app-name {
+  text-align: center;
+}
+
+.logo {
+  height: 70px;
+  margin-right: 20px;
+}
+
+.app-name {
+  color: var(--text-main);
+  font-size: 32px;
+}
+
+.artist {
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 0;
+  font-size: 30px;
+  display: flex;
+}
+
+.artist ul {
+  background-color: #00f;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  overflow: hidden;
+}
+
+.artist a {
+  color: #00f;
+  padding: 15px;
+  display: block;
+}
+
+.artist a:hover {
+  background-color: #333;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+#artist-details {
+  height: 50vh;
+  position: relative;
+}
+
+#artist-background {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 50vh;
+  position: absolute;
+}
+
+#selected-artist {
+  color: #00f;
+}
+
+#artist-name {
+  padding-left: 20px;
+  font-size: 70px;
+}
+
+#artist-link {
+  padding-left: 20px;
+  font-size: 18px;
+}
+
+/*# sourceMappingURL=index.4e361204.css.map */

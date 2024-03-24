@@ -1,0 +1,77 @@
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--background); /* 使用 water.css 定义的变量 */
+  padding: 10px;
+}
+.app-name {
+  text-align: center;
+}
+
+.logo {
+  height: 70px;
+  margin-right: 20px;
+}
+.app-name {
+  font-size: 32px;
+  color: var(--text-main);
+}
+
+.artist {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 0;
+}
+.artist ul {
+  list-style-type: none; /* Correct property name */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins to align with the container's edge */
+  background-color: blue;
+  overflow: hidden;
+}
+.artist a {
+  color: blue;
+  padding: 15px;
+  display: block;
+}
+.artist a:hover {
+  background-color: hsl(0, 0%, 20%);
+}
+
+.container {
+  display: flex;
+  width: 100%; /* 確保容器寬度為100% */
+  height: 100vh;
+  margin: 0; /* 移除邊界 */
+  padding: 0; /* 移除內邊距 */
+}
+#artist-details {
+  height: 50vh; /* Half of the viewport height */
+  position: relative;
+}
+
+#artist-background {
+  background-size: cover; /* 或者使用 contain 根據需求 */
+  position: absolute;
+  background-repeat: no-repeat;
+  height: 50vh; /* 或者設定為其他固定的高度 */
+  width: 100%;
+}
+
+#selected-artist {
+  color: blue;
+}
+
+#artist-name {
+  font-size: 70px;
+  padding-left: 20px;
+}
+
+#artist-link {
+  font-size: 18px;
+  padding-left: 20px;
+}
