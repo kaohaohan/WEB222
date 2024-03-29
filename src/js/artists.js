@@ -24,5 +24,14 @@ window.artists = [
       { url: "https://www.coldplay.com/", name: "coldplay" },
       { url: "https://www.instagram.com/coldplay/", name: "Instagram" }
     ]
+  },
+  {
+    artistId: "3",
+    name: "Macklemore",
+    profileUrl: "https://i.scdn.co/image/ab6761610000e5eb488b3b242f97163a7f8e17b9",
+    urls: [
+      { url: "https://en.wikipedia.org/wiki/Macklemore", name: "Macklemore" },
+      { url: "https://www.instagram.com/macklemore/?hl=en", name: "Instagram" }
+    ]
   }
 ];

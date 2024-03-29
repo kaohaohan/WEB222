@@ -8,9 +8,9 @@
  *
  * Please update the following with your information:
  *
- *      Name:       <YOUR_NAME>
- *      Student ID: <YOUR_STUDENT_ID>
- *      Date:       <SUBMISSION_DATE>
+ *      Name:      Hao Han Kao
+ *      Student ID: 151604220
+ *      Date:       2024/03/29
  */
 
 // All of our data is available on the global `window` object.
