@@ -7,6 +7,7 @@
 window.songs = [
   /* TODO */
   {
+    //mac
     songId: "SID-1",
 
     artistId: "AID-1",

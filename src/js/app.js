@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     button.textContent = artist.name;
     button.setAttribute("data-artist-id", artist.artistId);
+
     button.className = "bg-sky-500 hover:bg-sky-700 text-yellow font-bold py-1 px-4 rounded-full";
     button.addEventListener("click", function () {
       displayArtistDetails(artist.artistId);
@@ -43,6 +44,12 @@ function displayBasicInfo(artistId) {
 
   const artist = artists.find((a) => a.artistId === artistId);
   selectedArtist.innerHTML = "";
+
+  // blue check herererere bug !!!
+  const blueCheckElem = document.createElement("img");
+  blueCheckElem.setAttribute("src", "images/blueCheck.png");
+  blueCheckElem.className = "blueCheck";
+  selectedArtist.appendChild(blueCheckElem);
 
   //點擊後會出現歌手name and Wiki, ig
   const artistNameElem = document.createElement("h1");
@@ -65,6 +72,15 @@ function displayBasicInfo(artistId) {
       selectedArtist.appendChild(document.createTextNode(","));
     }
   });
+
+  //music list
+  const songsTbody = document.getElementById("songs");
+  let songArray = [];
+  for (let i = 0; i < songs.length; i++) {
+    if (songs.artistId === artistId) {
+      songArray.push(songs[i]);
+    }
+  }
 }
 
 // function displaySongs(artistId) {
