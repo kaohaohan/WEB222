@@ -16,6 +16,7 @@
 // All of our data is available on the global `window` object.
 // Create local variables to work with it in this file.
 const { artists, songs } = window;
+display("1");
 document.addEventListener("DOMContentLoaded", () => {
   const artistNav = document.querySelector(".artist");
   artists.forEach((artist) => {
@@ -24,21 +25,15 @@ document.addEventListener("DOMContentLoaded", () => {
     button.textContent = artist.name;
     button.setAttribute("data-artist-id", artist.artistId);
 
-    button.className = "bg-sky-500 hover:bg-sky-700 text-yellow font-bold py-1 px-4 rounded-full";
     button.addEventListener("click", function () {
-      displayArtistDetails(artist.artistId);
+      display(artist.artistId);
     });
 
-    artistNav.appendChild(button); // Append the button to the artist navigation
-    // Append the button to the menu
+    artistNav.appendChild(button);
   });
 });
 
-function displayArtistDetails(artistId) {
-  displayBasicInfo(artistId);
-}
-
-function displayBasicInfo(artistId) {
+function display(artistId) {
   const selectedArtist = document.getElementById("selected-artist");
   const artistBackground = document.getElementById("artist-background");
 
@@ -46,10 +41,17 @@ function displayBasicInfo(artistId) {
   selectedArtist.innerHTML = "";
 
   // blue check herererere bug !!!
+  const subscriptionDiv = document.createElement("div");
+  selectedArtist.appendChild(subscriptionDiv);
+  const verifyDiv = document.createElement("span");
+  verifyDiv.innerHTML = "Verified Artist";
   const blueCheckElem = document.createElement("img");
-  blueCheckElem.setAttribute("src", "images/blueCheck.png");
-  blueCheckElem.className = "blueCheck";
-  selectedArtist.appendChild(blueCheckElem);
+  blueCheckElem.src = new URL("../images/blueCheck.png", import.meta.url);
+
+  subscriptionDiv.className = "blueCheck";
+  blueCheckElem.id = "blueCheck";
+  subscriptionDiv.appendChild(blueCheckElem);
+  subscriptionDiv.appendChild(verifyDiv);
 
   //點擊後會出現歌手name and Wiki, ig
   const artistNameElem = document.createElement("h1");
@@ -75,24 +77,40 @@ function displayBasicInfo(artistId) {
 
   //music list
   const songsTbody = document.getElementById("songs");
+  songsTbody.innerHTML = "";
   let songArray = [];
+
   for (let i = 0; i < songs.length; i++) {
-    if (songs.artistId === artistId) {
+    if (songs[i].artistId === artistId) {
       songArray.push(songs[i]);
     }
   }
+
+  for (let i = 0; i < songArray.length; i++) {
+    const tr = document.createElement("tr");
+    tr.addEventListener("click", () => console.log(songArray[i]));
+    const tdTitle = document.createElement("td");
+    const link = document.createElement("a");
+    link.href = songArray[i].url;
+    // link.target = "_blank";
+    link.textContent = songArray[i].title;
+    tdTitle.appendChild(link);
+
+    const tdYear = document.createElement("td");
+    tdYear.textContent = songArray[i].year;
+
+    const tdDuration = document.createElement("td");
+    const minutes = Math.floor(songArray[i].duration / 60);
+    const seconds = songArray[i].duration % 60;
+    tdDuration.textContent = `${minutes}:${seconds.toString().padStart(2, "0")}`;
+
+    tr.appendChild(tdTitle);
+    tr.appendChild(tdYear);
+    tr.appendChild(tdDuration);
+
+    songsTbody.appendChild(tr);
+  }
 }
-
-// function displaySongs(artistId) {
-//   const tbody = document.getElementById("songs");
-//   const artist = artists.find((a) => a.artistId === artistId);
-
-//   tbody.innerHTML = "";
-
-//   const songsForArtist = songs.filter((song) => {
-//     return song.artistId === artist.artistId && !song.expicit;
-//   });
-// }
 
 // For debugging, display all of our data in the console. You can remove this later.
 console.log({ artists, songs }, "App Data");

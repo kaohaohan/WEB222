@@ -10,9 +10,25 @@ window.songs = [
     //mac
     songId: "SID-1",
 
-    artistId: "AID-1",
+    artistId: "1",
 
     title: "Swinmming",
+
+    year: "2018",
+
+    duration: 161,
+
+    url: "https://www.youtube.com/watch?v=VzAjXdBJsEc&list=PLsIPsvDxvD8EKyrhkzup9I4ZtpxKv-ugU",
+
+    explicit: true
+  },
+  {
+    //mac
+    songId: "SID-2",
+
+    artistId: "1",
+
+    title: "test",
 
     year: "2018",
 
@@ -26,7 +42,7 @@ window.songs = [
   {
     songId: "SID-2",
 
-    artistId: "AID-2",
+    artistId: "2",
 
     title: "Parachutes",
 
